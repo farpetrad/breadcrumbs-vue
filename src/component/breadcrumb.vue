@@ -1,13 +1,14 @@
 <template>
-    <div class="container row">         
+    <div class="container row" data-breadcrumb="container">         
         <div v-if="doBreadcrumb" v-for="link in routes" :key="link.path"
              v-bind:class="{'col-sm-1 col-md-1 col-lg-1': crumbSizeSmall(link), 
-                            'col-sm-3 col-md-3 col-lg-3' : crumbSizeMedium(link) , 
-                            'col-sm-6 col-md-6 col-lg-6' : crumbSizeLarge(link)}">
-            <span>
+                            'col-sm-3 col-md-3 col-lg-3' : crumbSizeMedium(link), 
+                            'col-sm-6 col-md-6 col-lg-6' : crumbSizeLarge(link)}"
+             data-breadcrumb="column">
+            <span data-breadcrumb="header">
                 <router-link :to="{ name: link.name, params: routeParams(link)}">{{link.meta.bcLinkText}} :</router-link>
             </span>
-            <span v-if="linkText(link) !== ''">{{linkText(link)}}</span>
+            <span v-if="linkText(link) !== ''" data-breadcrumb="text">{{linkText(link)}}</span>
         </div>
     </div>
 </template>
