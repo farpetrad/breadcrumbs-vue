@@ -92,3 +92,5 @@ export default new VueRouter({
 ```
 
 The rendering of the breadcrums would be the same as above however when the user selects a book and navigates to the Book route and is viewing a book the breadcrumb would provide a link in the form of /RouteName/paramName/value.
+
+See samples.
