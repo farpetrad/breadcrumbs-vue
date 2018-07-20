@@ -1,14 +1,14 @@
 <template>
-    <div class="container row" data-breadcrumb="container">         
-        <div v-if="doBreadcrumb" v-for="link in routes" :key="link.path"
+    <div class="container row breadcrumb">         
+        <div v-if="doBreadcrumb" v-for="link in routes" :key="link.path" class="bc-col"
              v-bind:class="{'col-sm-1 col-md-1 col-lg-1': crumbSizeSmall(link), 
                             'col-sm-3 col-md-3 col-lg-3' : crumbSizeMedium(link), 
                             'col-sm-6 col-md-6 col-lg-6' : crumbSizeLarge(link)}"
-             data-breadcrumb="column">
-            <span data-breadcrumb="header">
-                <router-link :to="{ name: link.name, params: routeParams(link)}">{{link.meta.bcLinkText}} :</router-link>
+             >
+            <span>
+                <router-link :to="{ name: link.name, params: routeParams(link)}" class="bc-link">{{link.meta.bcLinkText}} :</router-link>
             </span>
-            <span v-if="linkText(link) !== ''" data-breadcrumb="text">{{linkText(link)}}</span>
+            <span v-if="linkText(link) !== ''" class="bc-txt">{{linkText(link)}}</span>
         </div>
     </div>
 </template>
@@ -48,7 +48,7 @@
                 };
             },
             // used to determine which css bootstrap column size we should apply
-            crumbSizeSmall() {  // must use arrow functions to pass in params
+            crumbSizeSmall() { 
                 return (link) => {
                     var linkText = this.computeLinkText(link);
                     var size = this.sizeLink(link);
@@ -56,14 +56,14 @@
                 };
             },
             crumbSizeMedium() {
-                return (link) => {  // must use arrow functions to pass in params
+                return (link) => {
                     var linkText = this.computeLinkText(link);
                     var size = this.sizeLink(link);
                     return size > 6 && size <= 29;
                 };
             },
             crumbSizeLarge() {
-                return (link) => {  // must use arrow functions to pass in params
+                return (link) => {
                     var linkText = this.computeLinkText(link);
                     var size = this.sizeLink(link);
                     return size > 29;
@@ -84,3 +84,7 @@
         }
     }
 </script>
+
+<style lang="scss" scoped>
+    @import './content/breadcumb.scss';
+</style>
