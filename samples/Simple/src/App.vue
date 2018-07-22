@@ -10,11 +10,8 @@
 </template>
 
 <script>
-import Breadcrumb from './plugins/component/Breadcrumb.vue'
-
 export default {
   name: 'App',
-  components: { Breadcrumb }
 }
 </script>
 

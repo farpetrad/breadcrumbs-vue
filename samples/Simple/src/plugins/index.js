@@ -6,7 +6,7 @@ export default {
   Breadcrumb,
   install (Vue, options) {
     const {
-      moduleName = 'breadcrumbs-vue',
+      moduleName = 'breadcrumb',
       router,
       store
     } = options || {}
