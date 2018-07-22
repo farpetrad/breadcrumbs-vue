@@ -32,6 +32,7 @@ export default{
             }
         });
 
-        Vue.component(moduleName, Breadcrumb);
+        Vue.component(moduleName, Breadcrumb)
+
     }
 };

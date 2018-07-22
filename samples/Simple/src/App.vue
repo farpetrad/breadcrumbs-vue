@@ -1,10 +1,13 @@
 <template>
   <div id="app">
+    <span>breadcrumbs-vue</span>
+    <br/>
     <img src="./assets/logo.png"><br/>
-    {{this.$route.name}}
+    
     <div v-for="(route, index) in $route.matched" :key="index" class="container backgroundColor">
           <breadcrumb :route="route"></breadcrumb>
-      </div>
+    </div>
+    <br/>
     <router-view/>
   </div>
 </template>

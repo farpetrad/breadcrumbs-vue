@@ -1,6 +1,6 @@
 <template>
     <div class="row breadcrumb">
-        <div v-if="doBreadcrumb" v-for="link in routes" :key="link.path" class="bc-col"
+        <div v-for="link in routes" :key="link.path" class="bc-col"
              v-bind:class="{'bc-col-sm-1 bc-col-md-1 bc-col-lg-1': crumbSizeSmall(link),
                             'bc-col-sm-3 bc-col-md-3 bc-col-lg-3' : crumbSizeMedium(link),
                             'bc-col-sm-6 bc-col-md-6 bc-col-lg-6' : crumbSizeLarge(link)}"
@@ -26,11 +26,6 @@ export default {
     },
     linkText () {
       return (link) => this.computeLinkText(link) // wrap computeLinkText to make reactive
-    },
-    doBreadcrumb () {
-      // only show breadcrumbs if we have more than just 1
-      var data = this.routes
-      return data.length > 1
     },
     routeParams () {
       return (link) => {
