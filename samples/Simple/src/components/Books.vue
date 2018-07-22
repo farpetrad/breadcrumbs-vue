@@ -1,0 +1,37 @@
+<template>
+    <div>
+        <p>Book Categories</p>
+        <div>
+            <ul>
+                <li v-for="(item,index) in this.categories" :key=index>
+                    <router-link :to="{ name: 'categoryview', params: { categoryId: item.cid, cname: item.name } }">{{item.name}}</router-link>
+                </li>
+            </ul>
+        </div>
+    </div>
+</template>
+
+<script>
+export default {
+  name: 'books',
+  data () {
+    return {
+      categories: [
+        {cid: 1, name: 'Science Fiction'},
+        {cid: 2, name: 'Satire'},
+        {cid: 3, name: 'Drama'},
+        {cid: 4, name: 'Action and Adventure'},
+        {cid: 5, name: 'Romance'},
+        {cid: 6, name: 'Mystery'},
+        {cid: 7, name: 'Horror'},
+        {cid: 8, name: 'Self Help'},
+        {cid: 9, name: 'Health'},
+        {cid: 10, name: 'Travel'}
+      ]
+    }
+  },
+  created () {
+  }
+}
+
+</script>
