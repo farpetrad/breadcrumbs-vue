@@ -23,7 +23,8 @@ export default new Router({
       component: Category,
       props: true,
       meta: {
-        bcLinkText: 'Category'
+        bcLinkText: 'Category',
+        bcGetter: 'activeCategoryName'
       }
     }
   ]

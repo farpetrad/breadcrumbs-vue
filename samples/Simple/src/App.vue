@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <img src="./assets/logo.png"><br/>
+    {{this.$route.name}}
     <div v-for="(route, index) in $route.matched" :key="index" class="container backgroundColor">
           <breadcrumb :route="route"></breadcrumb>
       </div>

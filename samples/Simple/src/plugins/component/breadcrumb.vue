@@ -1,9 +1,9 @@
 <template>
-    <div class="container row breadcrumb">
+    <div class="row breadcrumb">
         <div v-if="doBreadcrumb" v-for="link in routes" :key="link.path" class="bc-col"
-             v-bind:class="{'col-sm-1 col-md-1 col-lg-1': crumbSizeSmall(link),
-                            'col-sm-3 col-md-3 col-lg-3' : crumbSizeMedium(link),
-                            'col-sm-6 col-md-6 col-lg-6' : crumbSizeLarge(link)}"
+             v-bind:class="{'bc-col-sm-1 bc-col-md-1 bc-col-lg-1': crumbSizeSmall(link),
+                            'bc-col-sm-3 bc-col-md-3 bc-col-lg-3' : crumbSizeMedium(link),
+                            'bc-col-sm-6 bc-col-md-6 bc-col-lg-6' : crumbSizeLarge(link)}"
              >
             <span>
                 <router-link :to="{ name: link.name, params: routeParams(link)}" class="bc-link">{{link.meta.bcLinkText}} :</router-link>

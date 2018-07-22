@@ -4,7 +4,9 @@
         <div>
             <ul>
                 <li v-for="(item,index) in this.categories" :key=index>
-                    <router-link :to="{ name: 'categoryview', params: { categoryId: item.cid, cname: item.name } }">{{item.name}}</router-link>
+                    <router-link
+                    :to="{ name: 'categoryview', params: { categoryId: item.cid, cname: item.name } }"
+                    v-on:click.native="doCategoryNav(item.cid,item.name)">{{item.name}}</router-link>
                 </li>
             </ul>
         </div>
@@ -12,6 +14,8 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
+
 export default {
   name: 'books',
   data () {
@@ -30,7 +34,11 @@ export default {
       ]
     }
   },
-  created () {
+  methods: {
+    ...mapMutations(['setActiveCategory']),
+    doCategoryNav (cid, name) {
+      this.setActiveCategory({categoryId: cid, cname: name})
+    }
   }
 }
 
