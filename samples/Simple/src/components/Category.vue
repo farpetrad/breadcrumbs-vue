@@ -24,8 +24,7 @@ export default {
     ...mapMutations(['setActiveCategory'])
   },
   mounted () {
-    if(this.activeCategoryId === -1)
-    {
+    if (this.activeCategoryId === -1) {
       // Since we rely on the store to have a category for our breadcrumbs to work ensure it is set
       // this occurs if the user hits refresh for example
       this.setActiveCategory({categoryId: this.categoryId, cname: this.cname})

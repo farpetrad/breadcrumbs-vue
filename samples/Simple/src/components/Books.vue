@@ -1,8 +1,8 @@
 <template>
-    <div>
-        <p>Book Categories</p>
-        <div>
-            <ul>
+    <div class="container row">
+        <h3 class="col-12 text-center">Book Categories</h3>
+        <div class="col-12">
+            <ul class="text-left">
                 <li v-for="(item,index) in this.categories" :key=index>
                     <router-link
                     :to="{ name: 'categoryview', params: { categoryId: item.cid, cname: item.name } }"

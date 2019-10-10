@@ -1,4 +1,3 @@
-import Vue from 'vue'
 
 import Breadcrumb from './component/Breadcrumb.vue'
 
