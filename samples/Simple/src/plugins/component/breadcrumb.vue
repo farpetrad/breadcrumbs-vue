@@ -81,7 +81,7 @@ export default {
     padding-left: 15px;
     margin-right: -15px;
     margin-left: -15px;
-    
+
     .bc-txt{
       color:white;
     }
