@@ -1,15 +1,13 @@
 <template>
-    <div class="row breadcrumb">
-        <div v-for="link in routes" :key="link.path" class="bc-col"
-             v-bind:class="{'bc-col-sm-1 bc-col-md-1 bc-col-lg-1': crumbSizeSmall(link),
-                            'bc-col-sm-3 bc-col-md-3 bc-col-lg-3' : crumbSizeMedium(link),
-                            'bc-col-sm-6 bc-col-md-6 bc-col-lg-6' : crumbSizeLarge(link)}"
-             >
+    <div class="row bcrumb">
+        <ul v-for="link in routes" :key="link.path" class="navbar-nav">
+            <li>
             <span>
                 <router-link :to="{ name: link.name, params: routeParams(link)}" class="bc-link">{{link.meta.bcLinkText}} :</router-link>
             </span>
             <span v-if="linkText(link) !== ''" class="bc-txt">{{linkText(link)}}</span>
-        </div>
+            </li>
+        </ul>
     </div>
 </template>
 
@@ -37,8 +35,7 @@ export default {
             params[key] = this.$store.getters[params[key]]
           }
           return params
-        }
-        else {
+        } else {
           return {}
         }
       }
@@ -78,4 +75,15 @@ export default {
 }
 </script>
 
-
+<style lang="scss" scoped>
+    .bcrumb{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: -15px;
+    margin-left: -15px;
+    
+    .bc-txt{
+      color:white;
+    }
+}
+</style>
