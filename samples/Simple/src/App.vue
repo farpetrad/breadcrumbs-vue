@@ -4,11 +4,7 @@
       <span>breadcrumbs-vue</span>
       <br/>
       <img src="./assets/logo.png"><br/>
-      <nav  class="navbar navbar-dark bg-dark">
-        <template v-for="(route, index) in $route.matched" >
-            <breadcrumb :route="route" :key="index"></breadcrumb>
-        </template>
-      </nav>
+        <breadcrumb-trail></breadcrumb-trail>
       <br/>
       <router-view/>
     </div>

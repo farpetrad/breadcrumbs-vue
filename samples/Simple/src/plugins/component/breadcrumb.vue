@@ -39,25 +39,6 @@ export default {
           return {}
         }
       }
-    },
-    // used to determine which css bootstrap column size we should apply
-    crumbSizeSmall () {
-      return (link) => {
-        var size = this.sizeLink(link)
-        return size <= 6
-      }
-    },
-    crumbSizeMedium () {
-      return (link) => {
-        var size = this.sizeLink(link)
-        return size > 6 && size <= 29
-      }
-    },
-    crumbSizeLarge () {
-      return (link) => {
-        var size = this.sizeLink(link)
-        return size > 29
-      }
     }
   },
   methods: {

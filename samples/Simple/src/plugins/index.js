@@ -1,5 +1,6 @@
 
 import Breadcrumb from './component/Breadcrumb.vue'
+import BreadcrumbTrail from './component/BreadcrumbTrail.vue'
 
 export default {
   Breadcrumb,
@@ -19,6 +20,7 @@ export default {
 
     })
 
-    Vue.component(moduleName, Breadcrumb)
+    Vue.component(Breadcrumb.name, Breadcrumb)
+    Vue.component(BreadcrumbTrail.name, BreadcrumbTrail)
   }
 }
